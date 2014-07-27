@@ -1,0 +1,25 @@
+{
+  "name": "ascii-table",
+  "version": "1.0.0",
+  "description": "Create awesome ASCII tables with NodeJS.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:IonicaBizau/node-le-table.git"
+  },
+  "keywords": [
+    "table",
+    "ascii",
+    "node",
+    "cli"
+  ],
+  "author": "Ionică Bizău <bizauionica@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/IonicaBizau/node-le-table/issues"
+  },
+  "homepage": "https://github.com/IonicaBizau/node-le-table"
+}
