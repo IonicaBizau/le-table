@@ -184,7 +184,8 @@ var LeTable = module.exports = function (options) {
             offset.x = 0;
             offset.y += hMax + 1;
         }
-        return output;
+
+        return output.trim();
     };
 };
 
