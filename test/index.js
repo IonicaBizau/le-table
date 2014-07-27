@@ -25,7 +25,9 @@ Table.defaults.marks = {
 var myTable = new Table({});
 
 for (var i = 0; i < data.length; ++i) {
-    myTable.addRow([i].concat(data[i]));
+    myTable.addRow([i].concat(data[i]), {
+        hAlign: i > 2 ? "left": "right"
+    });
 }
 
 console.log(myTable.toString());
