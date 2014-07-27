@@ -1,5 +1,5 @@
 {
-  "name": "ascii-table",
+  "name": "le-table",
   "version": "1.0.0",
   "description": "Create awesome ASCII tables with NodeJS.",
   "main": "index.js",
@@ -21,5 +21,13 @@
   "bugs": {
     "url": "https://github.com/IonicaBizau/node-le-table/issues"
   },
-  "homepage": "https://github.com/IonicaBizau/node-le-table"
+  "homepage": "https://github.com/IonicaBizau/node-le-table",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "cli-box": "^1.0.1",
+    "overlap": "^0.1.0"
+  },
+  "devDependencies": {}
 }
