@@ -1,12 +1,12 @@
-# ascii-table
-Create awesome ASCII tables with NodeJS.
+# le-table
+Another NodeJS module for creating ASCII tables.
 
 ## Installation
 Run the following commands to download and install the application:
 
 ```sh
-$ git clone git@github.com:IonicaBizau/node-le-table.git ascii-table
-$ cd ascii-table
+$ git clone git@github.com:IonicaBizau/node-le-table.git le-table
+$ cd le-table
 $ npm install
 ```
 
