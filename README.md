@@ -1,4 +1,5 @@
-# le-table
+![](http://i.imgur.com/BKXaFAa.png)
+
 Another NodeJS module for creating ASCII tables.
 
 # Installation
