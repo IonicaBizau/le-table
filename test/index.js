@@ -1,8 +1,8 @@
 var Table = require("../index");
 
 var data = [
-    ["Data 1.1", "Data 2.1"]
-  , ["Data 1.2", "Data 2.2"]
+    ["Data 1.1", "Data 2.1\nNew line"]
+  , ["Data 1.2", "Data 2.2loasdasd\nasd"]
 ];
 
 Table.defaults.marks = {

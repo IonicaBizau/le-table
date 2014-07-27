@@ -32,12 +32,48 @@ var LeTable = module.exports = function (options) {
             }
           ;
 
+        var cellSizes = [];
         for (var i = 0; i < self.data.length; ++i) {
             var cRow = self.data[i]
+            cellSizes.push([]);
             for (var ii = 0; ii < cRow.d.length; ++ii) {
+                var cell = Box({w:1,h:1, marks: {}}, {
+                        text: cRow.d[ii].toString()
+                      , stretch: true
+                      , autoEOL: true
+                    }).toString()
+                  , cCell = {
+                        w: (ii !== cRow.d.length - 1) ?
+                            cell.split("\n")[0].length - 2 : cell.split("\n")[0].length
+                      , h: cell.split("\n").length - 2
+                    }
+                  ;
+
+                cellSizes[i].push(cCell);
+            }
+        }
+
+        for (var i = 0; i < self.data.length; ++i) {
+            var cRow = self.data[i]
+              , wMax = -1
+              , hMax = -1
+              ;
+
+            for (var iii = 0; iii < cellSizes[i].length; ++iii) {
+                var cCell = cellSizes[i][iii];
+                if (cCell.h > hMax) { hMax = cCell.h; }
+            }
+
+            for (var ii = 0; ii < cRow.d.length; ++ii) {
+
+                for (var iii = 0; iii < cellSizes.length; ++iii) {
+                    var cCell = cellSizes[iii][ii];
+                    if (cCell.w > wMax) { wMax = cCell.w; }
+                }
+
                 var cell = Box({
-                    w: 1
-                  , h: 1
+                    w: wMax
+                  , h: hMax
                   , marks: {
                         nw: ((!i && !ii) ? marks.nw
                             : (!i && ii < cRow.d.length) ? marks.mt
@@ -59,15 +95,18 @@ var LeTable = module.exports = function (options) {
                   , stretch: true
                   , autoEOL: true
                 }).toString();
+
                 output = Overlap({
                     who: output
                   , with: cell
                   , where: offset
                 });
-                offset.x += cell.split("\n")[0].length - 1
+
+                offset.x += wMax + 1;
             }
+
             offset.x = 0;
-            offset.y += cell.split("\n").length - 1
+            offset.y += hMax + 1;
         }
         return output;
     };
