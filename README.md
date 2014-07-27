@@ -47,7 +47,7 @@ Stringifies the table
 
 ```js
 // Dependencies
-var Table = require("../index");
+var Table = require("le-table");
 
 // Table data
 var data = [
