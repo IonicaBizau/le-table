@@ -2,7 +2,12 @@ var Table = require("../index");
 
 var data = [
     ["Data 1.1", "Data 2.1\nNew line"]
-  , ["Data 1.2", "Data 2.2loasdasd\nasd"]
+  , ["Data 1.2", {
+        text: "Multi\nline\ncell\ncontent that is\n left aligned."
+      , data: {
+            hAlign: "left"
+        }
+    }]
 ];
 
 Table.defaults.marks = {

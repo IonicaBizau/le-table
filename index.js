@@ -61,8 +61,14 @@ var LeTable = module.exports = function (options) {
                 }
               ;
 
+            // Override with ops
             for (var op in ops) {
                 comCol.data[op] = ops[op];
+            }
+
+            // Override with cell data
+            for (var op in cColumn.data) {
+                comCol.data[op] = cColumn.data[op];
             }
 
             computedColumns.push(comCol);
