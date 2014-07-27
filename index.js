@@ -3,28 +3,58 @@ var Overlap = require("overlap")
   , Box = require("cli-box")
   ;
 
+/**
+ * LeTable
+ * Another NodeJS module for creating ASCII tables.
+ *
+ * @name exports
+ * @function
+ * @param {Object} options An object containing the table configuration.
+ * @return {LeTable} LeTable instance
+ */
 var LeTable = module.exports = function (options) {
+
     var self = this;
     self.data = [];
 
-
+    // Handle options
     options = Object(options);
     options.marks = Object(options.marks);
 
-
-    var marks = {};
+    // Create marks
+    var marks = self.marks = {};
     for (var m in LeTable.defaults.marks) {
         marks[m] = options.marks[m] || LeTable.defaults.marks[m];
     }
 
+    /**
+     * addRow
+     * Adds a new row in table.
+     *
+     * @name addRow
+     * @function
+     * @param {Array} columns Row data (as array)
+     * @param {Object} ops Options for cell content
+     * @return {LeTable} LeTable instance
+     */
     self.addRow = function (columns, ops) {
         self.data.push({
             d: columns
           , o: Object(ops)
         });
+        return self;
     };
 
+    /**
+     * toString
+     * Stringifies the table
+     *
+     * @name toString
+     * @function
+     * @return {String} Stringified table
+     */
     self.toString = function () {
+
         var output = ""
           , offset = {
                 x: 0
@@ -32,6 +62,7 @@ var LeTable = module.exports = function (options) {
             }
           ;
 
+        // Compute cell sizes internally
         var cellSizes = [];
         for (var i = 0; i < self.data.length; ++i) {
             var cRow = self.data[i]
@@ -53,7 +84,10 @@ var LeTable = module.exports = function (options) {
             }
         }
 
+        // Each row
         for (var i = 0; i < self.data.length; ++i) {
+
+            // Compute row
             var cRow = self.data[i]
               , wMax = -1
               , hMax = -1
@@ -64,13 +98,16 @@ var LeTable = module.exports = function (options) {
                 if (cCell.h > hMax) { hMax = cCell.h; }
             }
 
+            // Each column from current row
             for (var ii = 0; ii < cRow.d.length; ++ii) {
 
+                // Compute current column
                 for (var iii = 0; iii < cellSizes.length; ++iii) {
                     var cCell = cellSizes[iii][ii];
                     if (cCell.w > wMax) { wMax = cCell.w; }
                 }
 
+                // Create cell box
                 var cell = Box({
                     w: wMax
                   , h: hMax
@@ -96,6 +133,7 @@ var LeTable = module.exports = function (options) {
                   , autoEOL: true
                 }).toString();
 
+                // Add stringified cell to output
                 output = Overlap({
                     who: output
                   , with: cell
@@ -112,6 +150,7 @@ var LeTable = module.exports = function (options) {
     };
 };
 
+// Defaults
 LeTable.defaults = {
     marks: {
         nw: "+"
