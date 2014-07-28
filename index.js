@@ -119,7 +119,7 @@ var LeTable = module.exports = function (options) {
                   , cell = createCell(cColumn, 1, 1, {})
                   , splits = cell.split("\n")
                   , cCell = {
-                        w: (ii !== cRow.length - 1)
+                        w: (ii !== cRow.length - 2)
                            ? splits[0].length - 2 : splits[0].length
                       , h: splits.length - 2
                     }
@@ -178,7 +178,7 @@ var LeTable = module.exports = function (options) {
                   , where: offset
                 });
 
-                offset.x += wMax + 1;
+                offset.x += wMax + ((ii === cRow.length - 2) ? -1 : 1);
             }
 
             offset.x = 0;

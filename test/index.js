@@ -3,13 +3,15 @@ var Table = require("../index");
 
 // Table data
 var data = [
-    ["Data 1.1", "Data 2.1\nNew line"]
-  , ["Data 1.2", {
+    ["Cell 1.1", "Cell 2.1", "Cell 3.1"]
+  , ["Cell 1.2", {
         text: "Multi\nline\ncell\ncontent that is\n left aligned."
       , data: {
             hAlign: "left"
         }
-    }]
+    }, "Cell 3.2"]
+  , ["Cell 1.3", "Cell 2.3", "Cell 3.3"]
+  , ["Cell 1.4", "Cell 2.4", "Cell 3.4"]
 ];
 
 // Table defaults
