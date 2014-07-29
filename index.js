@@ -80,8 +80,8 @@ var LeTable = module.exports = function (options) {
 
     function createCell(cColumn, wMax, hMax, marks) {
         return Box({
-            w: wMax
-          , h: hMax
+            w: cColumn.data.w || cColumn.data.width || wMax
+          , h: cColumn.data.h || cColumn.data.height || hMax
           , marks: marks
         }, {
             text: cColumn.text
