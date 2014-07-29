@@ -119,12 +119,10 @@ var LeTable = module.exports = function (options) {
                   , cell = createCell(cColumn, 1, 1, {})
                   , splits = cell.split("\n")
                   , cCell = {
-                        w: (ii !== cRow.length - 2)
-                           ? splits[0].length - 2 : splits[0].length
+                        w: splits[0].trim().length
                       , h: splits.length - 2
                     }
                   ;
-
                 cellSizes[i].push(cCell);
             }
         }
@@ -170,15 +168,15 @@ var LeTable = module.exports = function (options) {
                   , w:  marks.w
                   , b: " "
                 };
-
+                
                 // Add stringified cell to output
                 output = Overlap({
                     who: output
                   , with: createCell(cColumn, wMax, hMax, mrks)
                   , where: offset
                 });
-
-                offset.x += wMax + ((ii === cRow.length - 2) ? -1 : 1);
+                
+                offset.x += wMax - 1;
             }
 
             offset.x = 0;
