@@ -168,14 +168,14 @@ var LeTable = module.exports = function (options) {
                   , w:  marks.w
                   , b: " "
                 };
-                
+
                 // Add stringified cell to output
                 output = Overlap({
                     who: output
                   , with: createCell(cColumn, wMax, hMax, mrks)
                   , where: offset
                 });
-                
+
                 offset.x += wMax - 1;
             }
 
@@ -183,7 +183,9 @@ var LeTable = module.exports = function (options) {
             offset.y += hMax + 1;
         }
 
-        return output.trim();
+        output = output.trim();
+        output = output.replace(/\u001b$/gm, self.marks.e);
+        return output;
     };
 };
 
