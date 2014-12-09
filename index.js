@@ -23,16 +23,18 @@ var LeTable = module.exports = function (options) {
     options.cell = Object(options.cell);
 
     // Create marks
-    var marks = self.marks = {};
-    for (var m in LeTable.defaults.marks) {
+    var marks = self.marks = {}
+      , m = null
+      ;
+
+    for (m in LeTable.defaults.marks) {
         marks[m] = options.marks[m] || LeTable.defaults.marks[m];
     }
 
     // Create cell options
     var cellOps = self.cell = {};
-    for (var m in LeTable.defaults.cell) {
-        cellOps[m] = options.marks[m] !== undefined
-                     ? options.marks[m] : LeTable.defaults.cell[m];
+    for (m in LeTable.defaults.cell) {
+        cellOps[m] = options.marks[m] !== undefined ? options.marks[m] : LeTable.defaults.cell[m];
     }
 
     /**
@@ -46,28 +48,32 @@ var LeTable = module.exports = function (options) {
      * @return {LeTable} LeTable instance
      */
     self.addRow = function (columns, ops) {
-        var computedColumns = [];
+        var computedColumns = []
+          , i = 0
+          , cColumn = null
+          , comCol = null
+          , op = null
+          ;
 
-        for (var i = 0; i < columns.length; ++i) {
-            var cColumn = columns[i]
-              , comCol = {
-                    text: (cColumn.text || cColumn).toString()
-                  , data: {
-                        stretch: cellOps.stretch
-                      , autoEOL: cellOps.autoEOL
-                      , vAlign:  cellOps.vAlign
-                      , hAlign:  cellOps.hAlign
-                    }
+        for (i = 0; i < columns.length; ++i) {
+            cColumn = columns[i];
+            comCol = {
+                text: (cColumn.text || cColumn).toString()
+              , data: {
+                    stretch: cellOps.stretch
+                  , autoEOL: cellOps.autoEOL
+                  , vAlign:  cellOps.vAlign
+                  , hAlign:  cellOps.hAlign
                 }
-              ;
+            };
 
             // Override with ops
-            for (var op in ops) {
+            for (op in ops) {
                 comCol.data[op] = ops[op];
             }
 
             // Override with cell data
-            for (var op in cColumn.data) {
+            for (op in cColumn.data) {
                 comCol.data[op] = cColumn.data[op];
             }
 
@@ -107,52 +113,60 @@ var LeTable = module.exports = function (options) {
                 x: 0
               , y: 0
             }
+          , cellSizes = []
+          , i = 0
+          , ii = 0
+          , cRow = null
+          , cColumn =  null
+          , cell = null
+          , cCell = null
+          , splits = null
+          , wMax = null
+          , hMax = null
+          , mrks = null
           ;
 
         // Compute cell sizes internally
-        var cellSizes = [];
-        for (var i = 0; i < self.data.length; ++i) {
-            var cRow = self.data[i]
+        for (i = 0; i < self.data.length; ++i) {
+            cRow = self.data[i];
             cellSizes.push([]);
-            for (var ii = 0; ii < cRow.length; ++ii) {
-                var cColumn =  cRow[ii]
-                  , cell = createCell(cColumn, 1, 1, {})
-                  , splits = cell.split("\n")
-                  , cCell = {
-                        w: splits[0].trim().length
-                      , h: splits.length - 2
-                    }
-                  ;
+            for (ii = 0; ii < cRow.length; ++ii) {
+                cColumn =  cRow[ii];
+                cell = createCell(cColumn, 1, 1, {});
+                splits = cell.split("\n");
+                cCell = {
+                    w: splits[0].trim().length
+                  , h: splits.length - 2
+                };
                 cellSizes[i].push(cCell);
             }
         }
 
         // Each row
-        for (var i = 0; i < self.data.length; ++i) {
+        for (i = 0; i < self.data.length; ++i) {
 
             // Compute row
-            var cRow = self.data[i]
-              , wMax = -1
-              , hMax = -1
-              ;
+            cRow = self.data[i];
+            wMax = -1;
+            hMax = -1;
 
-            for (var iii = 0; iii < cellSizes[i].length; ++iii) {
-                var cCell = cellSizes[i][iii];
+            for (iii = 0; iii < cellSizes[i].length; ++iii) {
+                cCell = cellSizes[i][iii];
                 if (cCell.h > hMax) { hMax = cCell.h; }
             }
 
             // Each column from current row
-            for (var ii = 0; ii < cRow.length; ++ii) {
+            for (ii = 0; ii < cRow.length; ++ii) {
 
-                var cColumn = cRow[ii];
+                cColumn = cRow[ii];
 
                 // Compute current column
-                for (var iii = 0; iii < cellSizes.length; ++iii) {
-                    var cCell = cellSizes[iii][ii];
+                for (iii = 0; iii < cellSizes.length; ++iii) {
+                    cCell = cellSizes[iii][ii];
                     if (cCell.w > wMax) { wMax = cCell.w; }
                 }
 
-                var mrks = {
+                mrks = {
                     nw: ((!i && !ii) ? marks.nw
                         : (!i && ii < cRow.length) ? marks.mt
                         : (!ii && i < self.data.length) ? marks.ml
