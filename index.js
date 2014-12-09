@@ -183,9 +183,7 @@ var LeTable = module.exports = function (options) {
             offset.y += hMax + 1;
         }
 
-        output = output.trim();
-        output = output.replace(/\u001b$/gm, self.marks.e);
-        return output;
+        return output.trim();
     };
 };
 
