@@ -168,14 +168,14 @@ var LeTable = module.exports = function (options) {
                   , w:  marks.w
                   , b: " "
                 };
-                
+
                 // Add stringified cell to output
                 output = Overlap({
                     who: output
                   , with: createCell(cColumn, wMax, hMax, mrks)
                   , where: offset
                 });
-                
+
                 offset.x += wMax - 1;
             }
 
