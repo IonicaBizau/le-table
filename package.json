@@ -29,7 +29,7 @@
     "test": "test"
   },
   "dependencies": {
-    "cli-box": "^2.0.0",
+    "cli-box": "^2.0.1",
     "overlap": "^1.4.0"
   },
   "devDependencies": {}

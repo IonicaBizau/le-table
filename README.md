@@ -98,6 +98,8 @@ Stringifies the table
 # Changelog
 ## `2.0.0`
  - Upgraded to `overlap@1.4.0`.
+ - Upgraded to `cli-box@2.0.1`.
+ - Minor syntax changes.
 
 ## `1.0.1`
  - Fixed offset calculation.
