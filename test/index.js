@@ -5,7 +5,7 @@ var Table = require("../index");
 var data = [
     ["Cell 1.1", "Cell 2.1", "Cell 3.1"]
   , ["Cell 1.2", {
-        text: "Multi\nline\ncell\ncontent that is\n left aligned."
+        text: "Multi\nline\n\u001b[34mcell\ncontent that\u001b[0m is\n left aligned."
       , data: {
             hAlign: "left"
         }
