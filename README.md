@@ -92,6 +92,16 @@ for (var i = 0; i < data.length; ++i) {
 console.log(myTable.toString());
 ```
 
+# Changelog
+## `2.0.0`
+ - Upgraded to `overlap@1.4.0`.
+
+## `1.0.1`
+ - Fixed offset calculation.
+
+## `1.0.0`
+ - Initial stable release.
+
 # How to contribute
 
 1. File an issue in the repository, using the bug tracker, describing the
