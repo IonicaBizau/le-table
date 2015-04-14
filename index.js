@@ -43,14 +43,11 @@ var LeTable = module.exports = function (options) {
      */
     self.addRow = function (columns, ops) {
         var computedColumns = []
-          , i = 0
           , cColumn = null
           , comCol = null
-          , op = null
           ;
 
-        for (i = 0; i < columns.length; ++i) {
-            cColumn = columns[i];
+        columns.forEach(function (cColumn) {
             comCol = {
                 text: (cColumn.text || cColumn).toString()
               , data: {
@@ -62,17 +59,9 @@ var LeTable = module.exports = function (options) {
             };
 
             // Override with ops
-            for (op in ops) {
-                comCol.data[op] = ops[op];
-            }
-
-            // Override with cell data
-            for (op in cColumn.data) {
-                comCol.data[op] = cColumn.data[op];
-            }
-
+            comCol.data = Ul.merge(ops, cColumn.data, comCol.data);
             computedColumns.push(comCol);
-        }
+        });
 
         self.data.push(computedColumns);
         return self;
@@ -108,8 +97,6 @@ var LeTable = module.exports = function (options) {
               , y: 0
             }
           , cellSizes = []
-          , i = 0
-          , ii = 0
           , cRow = null
           , cColumn =  null
           , cell = null
@@ -121,11 +108,9 @@ var LeTable = module.exports = function (options) {
           ;
 
         // Compute cell sizes internally
-        for (i = 0; i < self.data.length; ++i) {
-            cRow = self.data[i];
+        self.data.forEach(function (cRow, i) {
             cellSizes.push([]);
-            for (ii = 0; ii < cRow.length; ++ii) {
-                cColumn =  cRow[ii];
+            cRow.forEach(function (cColumn) {
                 cell = createCell(cColumn, 1, 1, {});
                 splits = cell.split("\n");
                 cCell = {
@@ -133,32 +118,28 @@ var LeTable = module.exports = function (options) {
                   , h: splits.length - 2
                 };
                 cellSizes[i].push(cCell);
-            }
-        }
+            });
+        });
 
         // Each row
-        for (i = 0; i < self.data.length; ++i) {
+        self.data.forEach(function (cRow, i) {
 
             // Compute row
-            cRow = self.data[i];
             wMax = -1;
             hMax = -1;
 
-            for (iii = 0; iii < cellSizes[i].length; ++iii) {
-                cCell = cellSizes[i][iii];
+            cellSizes[i].forEach(function (cCell) {
                 if (cCell.h > hMax) { hMax = cCell.h; }
-            }
+            });
 
             // Each column from current row
-            for (ii = 0; ii < cRow.length; ++ii) {
-
-                cColumn = cRow[ii];
+            cRow.forEach(function (cColumn, ii) {
 
                 // Compute current column
-                for (iii = 0; iii < cellSizes.length; ++iii) {
+                cellSizes.forEach(function (cCell, iii) {
                     cCell = cellSizes[iii][ii];
                     if (cCell.w > wMax) { wMax = cCell.w; }
-                }
+                });
 
                 mrks = {
                     nw: ((!i && !ii)
@@ -185,11 +166,11 @@ var LeTable = module.exports = function (options) {
                 });
 
                 offset.x += wMax + mrks.w.length - 2;
-            }
+            });
 
             offset.x = 0;
             offset.y += hMax + 1;
-        }
+        });
 
         return output.trim();
     };
