@@ -30,7 +30,8 @@
   },
   "dependencies": {
     "cli-box": "^2.1.1",
-    "overlap": "^1.5.0"
+    "overlap": "^1.5.0",
+    "ul": "2.1.0"
   },
   "devDependencies": {}
 }
