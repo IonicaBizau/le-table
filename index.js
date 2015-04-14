@@ -1,6 +1,7 @@
 // Dependencies
 var Overlap = require("overlap")
   , Box = require("cli-box")
+  , Ul = require("ul")
   ;
 
 /**
@@ -23,19 +24,12 @@ var LeTable = module.exports = function (options) {
     options.cell = Object(options.cell);
 
     // Create marks
-    var marks = self.marks = {}
-      , m = null
+    var marks = null
+      , cellOps = null
       ;
 
-    for (m in LeTable.defaults.marks) {
-        marks[m] = options.marks[m] || LeTable.defaults.marks[m];
-    }
-
-    // Create cell options
-    var cellOps = self.cell = {};
-    for (m in LeTable.defaults.cell) {
-        cellOps[m] = options.marks[m] !== undefined ? options.marks[m] : LeTable.defaults.cell[m];
-    }
+    marks = self.marks = Ul.merge(options.marks, LeTable.defaults.marks);
+    cellOps = self.cell = Ul.merge(options.marks, LeTable.defaults.cell);
 
     /**
      * addRow
@@ -167,18 +161,18 @@ var LeTable = module.exports = function (options) {
                 }
 
                 mrks = {
-                    nw: ((!i && !ii) ? marks.nw
-                        : (!i && ii < cRow.length) ? marks.mt
-                        : (!ii && i < self.data.length) ? marks.ml
-                        : marks.mm)
+                    nw: ((!i && !ii)
+                        ? marks.nw : (!i && ii < cRow.length)
+                        ? marks.mt : (!ii && i < self.data.length)
+                        ? marks.ml : marks.mm)
                   , n:  marks.n
-                  , ne: (!i && ii === cRow.length - 1) ? marks.ne
-                        : marks.mr
+                  , ne: (!i && ii === cRow.length - 1)
+                        ? marks.ne : marks.mr
                   , e:  marks.e
                   , se: marks.se
                   , s:  marks.s
-                  , sw: (i === self.data.length - 1 && !ii) ? marks.sw
-                        : marks.mb
+                  , sw: (i === self.data.length - 1 && !ii)
+                        ? marks.sw : marks.mb
                   , w:  marks.w
                   , b: " "
                 };
@@ -190,7 +184,7 @@ var LeTable = module.exports = function (options) {
                   , where: offset
                 });
 
-                offset.x += wMax + (mrks.w.length - 2);
+                offset.x += wMax + mrks.w.length - 2;
             }
 
             offset.x = 0;
