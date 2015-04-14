@@ -190,7 +190,7 @@ var LeTable = module.exports = function (options) {
                   , where: offset
                 });
 
-                offset.x += wMax - 1;
+                offset.x += wMax + (mrks.w.length - 2);
             }
 
             offset.x = 0;
