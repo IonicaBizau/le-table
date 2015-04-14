@@ -8,7 +8,7 @@ var Overlap = require("overlap")
  * LeTable
  * Creates a new instance of `LeTable`.
  *
- * @name exports
+ * @name LeTable
  * @function
  * @param {Object} options An object containing the table configuration:
  *  - `cell`: object containing
@@ -63,7 +63,7 @@ LeTable.prototype.addRow = function (columns, ops) {
         };
 
         // Override with ops
-        comCol.data = Ul.merge(ops, cColumn.data, comCol.data);
+        comCol.data = Ul.merge(cColumn.data, ops, comCol.data);
         computedColumns.push(comCol);
     });
 
@@ -77,7 +77,7 @@ LeTable.prototype.addRow = function (columns, ops) {
  *
  * @name toString
  * @function
- * @return {String} Stringified table
+ * @return {String} The stringified table
  */
 LeTable.prototype.toString = function () {
 
