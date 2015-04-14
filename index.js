@@ -11,12 +11,14 @@ var Overlap = require("overlap")
  * @name LeTable
  * @function
  * @param {Object} options An object containing the table configuration:
- *  - `cell`: object containing
- *    - `hAlign` (default: `"center"`): One of the following values: `"left"`, `"center"` and `"right"`
- *    - `vAlign` (default: `"middle"`): One of the following values: `"top"`, `"middle"` and `"bottom"`
- *    - `autoEOL` (default: `true`): if true, the lines are wrapped inside of the cell
- *    - `stretch` (default: `true`): if true, the size of the box will not be fixed
- *  - `marks`: object containing the mark characters (see example)
+ *
+ *   - `cell`: object containing
+ *     - `hAlign` (default: `"center"`): One of the following values: `"left"`, `"center"` and `"right"`
+ *     - `vAlign` (default: `"middle"`): One of the following values: `"top"`, `"middle"` and `"bottom"`
+ *     - `autoEOL` (default: `true`): if true, the lines are wrapped inside of the cell
+ *     - `stretch` (default: `true`): if true, the size of the box will not be fixed
+ *   - `marks`: object containing the mark characters (see example)
+ *
  * @return {LeTable} The `LeTable` instance.
  */
 function LeTable(options) {
