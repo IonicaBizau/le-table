@@ -2,11 +2,11 @@
 
 Another NodeJS module for creating ASCII tables.
 
-# Example
+## Example
 
 ```js
 // Dependencies
-var Table = require("../index");
+var Table = require("le-table");
 
 // Table data
 var data = [
@@ -40,7 +40,7 @@ Table.defaults.marks = {
 };
 
 // Create table instance
-var myTable = new Table({});
+var myTable = new Table();
 
 // Push data
 for (var i = 0; i < data.length; ++i) {
@@ -57,58 +57,47 @@ The output will be:
 
 ![](http://i.imgur.com/vC3U1ZD.png)
 
-# Installation
+## Installation
 
 ```sh
 $ npm install le-table
 ```
 
-# Documentation
-## `new Table(options)`
-Creates a new instance of *`LeTable`*.
+## Documentation
+### `LeTable(options)`
+Creates a new instance of `LeTable`.
 
-### Params:
-* **Object|undefined** *options* An object containing the table configuration (if it's `undefined`, default values will be used):
-  - `cell`: object containing
-    - `hAlign` (default: `"center"`): One of the following values: `"left"`, `"center"` and `"right"`
-    - `vAlign` (default: `"middle"`): One of the following values: `"top"`, `"middle"` and `"bottom"`
-    - `autoEOL` (default: `true`): if true, the lines are wrapped inside of the cell
-    - `stretch` (default: `true`): if true, the size of the box will not be fixed
-  - `marks`: object containing the mark characters (see example)
+#### Params
+- **Object** `options`: An object containing the table configuration:  - `cell`: object containing
+   - `hAlign` (default: `"center"`): One of the following values: `"left"`, `"center"` and `"right"`
+   - `vAlign` (default: `"middle"`): One of the following values: `"top"`, `"middle"` and `"bottom"`
+   - `autoEOL` (default: `true`): if true, the lines are wrapped inside of the cell
+   - `stretch` (default: `true`): if true, the size of the box will not be fixed
+ - `marks`: object containing the mark characters (see example)
 
-### Return:
-* **LeTable** LeTable instance
+#### Return
+- **LeTable** The `LeTable` instance.
 
-## `addRow(columns, ops)`
+### `addRow(columns, ops)`
 Adds a new row in table.
 
-### Params:
-* **Array** *columns* Row data (as array)
-* **Object** *ops* Options for cell content
+#### Params
+- **Array** `columns`: Row data (as array)
+- **Object** `ops`: Options for cell content
 
-### Return:
-* **LeTable** LeTable instance
+#### Return
+- **LeTable** The `LeTable` instance.
 
-## `toString()`
-Stringifies the table
+### `toString()`
+Stringifies the table.
 
-### Return:
-* **String** Stringified table
+#### Return
+- **String** The stringified table
 
-# Changelog
-## `2.0.0`
- - Upgraded to `overlap@1.4.0`.
- - Upgraded to `cli-box@2.0.1`.
- - Minor syntax changes.
+## Changelog
+See the [releases](/releases) page.
 
-## `1.0.1`
- - Fixed offset calculation.
-
-## `1.0.0`
- - Initial stable release.
-
-# How to contribute
-
+## How to contribute
 1. File an issue in the repository, using the bug tracker, describing the
    contribution you'd like to make. This will help us to get you started on the
    right foot.
@@ -118,5 +107,5 @@ Stringifies the table
 4. Open a pull request, and reference the initial issue in the pull request
    message.
 
-# License
+## License
 See the [LICENSE](./LICENSE) file.
