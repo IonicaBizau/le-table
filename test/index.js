@@ -33,7 +33,7 @@ Table.defaults.marks = {
 };
 
 // Create table instance
-var myTable = new Table({});
+var myTable = new Table();
 
 // Push data
 for (var i = 0; i < data.length; ++i) {
