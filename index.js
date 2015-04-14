@@ -17,7 +17,7 @@ var Overlap = require("overlap")
  *    - `autoEOL` (default: `true`): if true, the lines are wrapped inside of the cell
  *    - `stretch` (default: `true`): if true, the size of the box will not be fixed
  *  - `marks`: object containing the mark characters (see example)
- * @return {LeTable} LeTable instance
+ * @return {LeTable} The `LeTable` instance.
  */
 function LeTable(options) {
     var self = this;
@@ -40,7 +40,7 @@ function LeTable(options) {
  * @function
  * @param {Array} columns Row data (as array)
  * @param {Object} ops Options for cell content
- * @return {LeTable} LeTable instance
+ * @return {LeTable} The `LeTable` instance.
  */
 LeTable.prototype.addRow = function (columns, ops) {
 
@@ -73,7 +73,7 @@ LeTable.prototype.addRow = function (columns, ops) {
 
 /**
  * toString
- * Stringifies the table
+ * Stringifies the table.
  *
  * @name toString
  * @function
