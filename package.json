@@ -2,9 +2,9 @@
   "name": "le-table",
   "version": "2.1.0",
   "description": "Another NodeJS module for creating ASCII tables.",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "node test/index"
+    "test": "node example"
   },
   "repository": {
     "type": "git",
