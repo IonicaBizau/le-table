@@ -1,5 +1,5 @@
 // Dependencies
-var Table = require("../index");
+var Table = require("../lib");
 
 // Table data
 var data = [
