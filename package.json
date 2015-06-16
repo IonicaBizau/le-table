@@ -1,6 +1,6 @@
 {
   "name": "le-table",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "Another NodeJS module for creating ASCII tables.",
   "main": "lib/index.js",
   "scripts": {
@@ -20,7 +20,7 @@
     "cli"
   ],
   "author": "Ionică Bizău <bizauionica@gmail.com>",
-  "license": "MIT",
+  "license": "KINDLY",
   "bugs": {
     "url": "https://github.com/IonicaBizau/node-le-table/issues"
   },
