@@ -33,5 +33,9 @@
     "overlap": "2.0.0",
     "ul": "5.0.0"
   },
+  "blah": {
+      "h_img": "http://i.imgur.com/BKXaFAa.png",
+      "ex_img": "http://i.imgur.com/DwyCfWo.png"
+  },
   "devDependencies": {}
 }
