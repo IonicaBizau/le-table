@@ -13,9 +13,13 @@
 <!-- * * * Thanks! * * *                                                    -->
 <!---------------------------------------------------------------------------->
 
+![le-table](http://i.imgur.com/BKXaFAa.png)
+
 # le-table [![Donate now][donate-now]][paypal-donations]
 
 Another NodeJS module for creating ASCII tables.
+
+![le-table](http://i.imgur.com/DwyCfWo.png)
 
 ## Installation
 
