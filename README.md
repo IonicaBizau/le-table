@@ -9,7 +9,7 @@ Another NodeJS module for creating ASCII tables.
 ## Installation
 
 ```sh
-$ npm i -g le-table
+$ npm i le-table
 ```
 
 ## Example
