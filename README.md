@@ -1,8 +1,8 @@
 [![le-table](http://i.imgur.com/BKXaFAa.png)](#)
 
-# le-table [![Support this project][donate-now]][paypal-donations]
+# le-table [![PayPal](https://img.shields.io/badge/%24-paypal-f39c12.svg)][paypal-donations] [![Travis](https://img.shields.io/travis/IonicaBizau/node-le-table.svg)](https://travis-ci.org/IonicaBizau/node-le-table/) [![Version](https://img.shields.io/npm/v/le-table.svg)](https://www.npmjs.com/package/le-table) [![Downloads](https://img.shields.io/npm/dt/le-table.svg)](https://www.npmjs.com/package/le-table) [![Get help on Codementor](https://cdn.codementor.io/badges/get_help_github.svg)](https://www.codementor.io/johnnyb?utm_source=github&utm_medium=button&utm_term=johnnyb&utm_campaign=github)
 
-Another NodeJS module for creating ASCII tables.
+> Another NodeJS module for creating ASCII tables.
 
 [![le-table](http://i.imgur.com/DwyCfWo.png)](#)
 
