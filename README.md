@@ -1,18 +1,21 @@
 [![le-table](http://i.imgur.com/BKXaFAa.png)](#)
 
-# le-table [![PayPal](https://img.shields.io/badge/%24-paypal-f39c12.svg)][paypal-donations] [![Travis](https://img.shields.io/travis/IonicaBizau/node-le-table.svg)](https://travis-ci.org/IonicaBizau/node-le-table/) [![Version](https://img.shields.io/npm/v/le-table.svg)](https://www.npmjs.com/package/le-table) [![Downloads](https://img.shields.io/npm/dt/le-table.svg)](https://www.npmjs.com/package/le-table) [![Get help on Codementor](https://cdn.codementor.io/badges/get_help_github.svg)](https://www.codementor.io/johnnyb?utm_source=github&utm_medium=button&utm_term=johnnyb&utm_campaign=github)
+# le-table [![PayPal](https://img.shields.io/badge/%24-paypal-f39c12.svg)][paypal-donations] [![Travis](https://img.shields.io/travis/IonicaBizau/le-table.svg)](https://travis-ci.org/IonicaBizau/le-table/) [![Version](https://img.shields.io/npm/v/le-table.svg)](https://www.npmjs.com/package/le-table) [![Downloads](https://img.shields.io/npm/dt/le-table.svg)](https://www.npmjs.com/package/le-table) [![Get help on Codementor](https://cdn.codementor.io/badges/get_help_github.svg)](https://www.codementor.io/johnnyb?utm_source=github&utm_medium=button&utm_term=johnnyb&utm_campaign=github)
 
 > Another NodeJS module for creating ASCII tables.
 
 [![le-table](http://i.imgur.com/DwyCfWo.png)](#)
 
-## Installation
-
+## :cloud: Installation
+    
 ```sh
 $ npm i --save le-table
 ```
 
-## Example
+            
+## :clipboard: Example
+
+        
 
 ```js
 // Dependencies
@@ -62,9 +65,9 @@ for (var i = 0; i < data.length; ++i) {
 // Output table
 console.log(myTable.toString());
 ```
-
-## Documentation
-
+    
+## :memo: Documentation
+        
 ### `LeTable(options)`
 Creates a new instance of `LeTable`.
 
@@ -96,34 +99,27 @@ Stringifies the table.
 #### Return
 - **String** The stringified table
 
-## How to contribute
+        
+## :yum: How to contribute
 Have an idea? Found a bug? See [how to contribute][contributing].
 
-## Where is this library used?
+## :dizzy: Where is this library used?
 If you are using this library in one of your projects, add it in this list. :sparkles:
 
- - [`ascii-github`](https://npmjs.com/package/ascii-github)
+ - [`ascii-github`](https://npmjs.com/package/ascii-github)—GitHub CLI Client
+ - [`bible`](https://github.com/BibleJS/BibleApp)—Read the Holy Bible via the command line.
+ - [`birthday`](https://github.com/IonicaBizau/birthday)—Know when a friend's birthday is coming.
+ - [`cli-github`](https://github.com/IonicaBizau/cli-github)—A fancy GitHub client for command line.
+ - [`clp`](https://github.com/IonicaBizau/node-clp)—A tiny and fast command line arguments parser and help generator.
+ - [`git-issues`](https://github.com/softwarescales/git-issues) (by Gabriel Petrovay)—Git issues extension to list issues of a Git project
+ - [`git-issues1`](https://github.com/softwarescales/git-issues) (by Gabriel Petrovay)—Git issues extension to list issues of a Git project
+ - [`idea`](https://github.com/IonicaBizau/idea)—A lightweight CLI tool and module for keeping ideas in a safe place quick and easy.
+ - [`tithe`](https://github.com/IonicaBizau/tithe)—Organize and track the tithe payments.
 
- - [`bible`](https://github.com/BibleJS/BibleApp)
-
- - [`birthday`](https://github.com/IonicaBizau/birthday)
-
- - [`cli-github`](https://github.com/IonicaBizau/cli-github)
-
- - [`clp`](https://github.com/IonicaBizau/node-clp)
-
- - [`git-issues`](https://github.com/softwarescales/git-issues) by Gabriel Petrovay
-
- - [`git-issues1`](https://github.com/softwarescales/git-issues) by Gabriel Petrovay
-
- - [`idea`](https://github.com/IonicaBizau/idea)
-
- - [`tithe`](https://github.com/IonicaBizau/tithe)
-
-## License
-
+## :scroll: License
+    
 [MIT][license] © [Ionică Bizău][website]
-
+    
 [paypal-donations]: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RVXDDLKKLQRJW
 [donate-now]: http://i.imgur.com/6cMbHOC.png
 
