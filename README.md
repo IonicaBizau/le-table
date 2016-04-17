@@ -60,6 +60,7 @@ Creates a new instance of `LeTable`.
     - `autoEOL` (default: `true`): if true, the lines are wrapped inside of the cell
     - `stretch` (default: `true`): if true, the size of the box will not be fixed
   - `marks`: object containing the mark characters (see example)
+  - `noAnsi` (Boolean): If you want to disable ANSI characters in the output.
 
 #### Return
 - **LeTable** The `LeTable` instance.
