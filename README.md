@@ -63,7 +63,7 @@ for (var i = 0; i < data.length; ++i) {
 }
 
 // Output table
-console.log(myTable.toString());
+console.log(myTable.stringify());
 ```
     
 ## :memo: Documentation
@@ -93,7 +93,7 @@ Adds a new row in table.
 #### Return
 - **LeTable** The `LeTable` instance.
 
-### `toString()`
+### `stringify()`
 Stringifies the table.
 
 #### Return
@@ -110,10 +110,10 @@ If you are using this library in one of your projects, add it in this list. :spa
  - [`bible`](https://github.com/BibleJS/BibleApp)—Read the Holy Bible via the command line.
  - [`birthday`](https://github.com/IonicaBizau/birthday)—Know when a friend's birthday is coming.
  - [`cli-github`](https://github.com/IonicaBizau/cli-github)—A fancy GitHub client for command line.
- - [`clp`](https://github.com/IonicaBizau/node-clp)—A tiny and fast command line arguments parser and help generator.
  - [`git-issues`](https://github.com/softwarescales/git-issues) (by Gabriel Petrovay)—Git issues extension to list issues of a Git project
  - [`git-issues1`](https://github.com/softwarescales/git-issues) (by Gabriel Petrovay)—Git issues extension to list issues of a Git project
  - [`idea`](https://github.com/IonicaBizau/idea)—A lightweight CLI tool and module for keeping ideas in a safe place quick and easy.
+ - [`tilda`](https://github.com/IonicaBizau/tilda)—Tiny module for building command line tools.
  - [`tithe`](https://github.com/IonicaBizau/tithe)—Organize and track the tithe payments.
 
 ## :scroll: License
