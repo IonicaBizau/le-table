@@ -1,6 +1,6 @@
 {
   "name": "le-table",
-  "version": "4.2.2",
+  "version": "5.0.0",
   "description": "Another NodeJS module for creating ASCII tables.",
   "main": "lib/index.js",
   "scripts": {
@@ -29,9 +29,9 @@
     "test": "test"
   },
   "dependencies": {
-    "cli-box": "5.0.0",
-    "overlap": "2.0.0",
-    "ul": "5.0.0"
+    "cli-box": "^6.0.0",
+    "overlap": "^2.2.1",
+    "ul": "^5.2.1"
   },
   "blah": {
     "h_img": "http://i.imgur.com/BKXaFAa.png",

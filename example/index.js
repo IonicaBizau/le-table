@@ -43,4 +43,4 @@ for (var i = 0; i < data.length; ++i) {
 }
 
 // Output table
-console.log(myTable.toString());
+console.log(myTable.stringify());
