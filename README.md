@@ -1,3 +1,4 @@
+
 [![le-table](http://i.imgur.com/BKXaFAa.png)](#)
 
 # le-table [![PayPal](https://img.shields.io/badge/%24-paypal-f39c12.svg)][paypal-donations] [![Travis](https://img.shields.io/travis/IonicaBizau/le-table.svg)](https://travis-ci.org/IonicaBizau/le-table/) [![Version](https://img.shields.io/npm/v/le-table.svg)](https://www.npmjs.com/package/le-table) [![Downloads](https://img.shields.io/npm/dt/le-table.svg)](https://www.npmjs.com/package/le-table) [![Get help on Codementor](https://cdn.codementor.io/badges/get_help_github.svg)](https://www.codementor.io/johnnyb?utm_source=github&utm_medium=button&utm_term=johnnyb&utm_campaign=github)
@@ -7,15 +8,15 @@
 [![le-table](http://i.imgur.com/DwyCfWo.png)](#)
 
 ## :cloud: Installation
-    
+
 ```sh
 $ npm i --save le-table
 ```
 
-            
+
 ## :clipboard: Example
 
-        
+
 
 ```js
 const Table = require("le-table");
@@ -46,9 +47,10 @@ for (let i = 0; i < data.length; ++i) {
 // Output table
 console.log(myTable.stringify());
 ```
-    
+
 ## :memo: Documentation
-        
+
+
 ### `LeTable(options)`
 Creates a new instance of `LeTable`.
 
@@ -81,12 +83,14 @@ Stringifies the table.
 #### Return
 - **String** The stringified table
 
-        
+
+
 ## :yum: How to contribute
 Have an idea? Found a bug? See [how to contribute][contributing].
 
 ## :dizzy: Where is this library used?
 If you are using this library in one of your projects, add it in this list. :sparkles:
+
 
  - [`ascii-github`](https://npmjs.com/package/ascii-github)—GitHub CLI Client
  - [`bible`](https://github.com/BibleJS/BibleApp)—Read the Holy Bible via the command line.
@@ -99,9 +103,9 @@ If you are using this library in one of your projects, add it in this list. :spa
  - [`tithe`](https://github.com/IonicaBizau/tithe)—Organize and track the tithe payments.
 
 ## :scroll: License
-    
+
 [MIT][license] © [Ionică Bizău][website]
-    
+
 [paypal-donations]: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RVXDDLKKLQRJW
 [donate-now]: http://i.imgur.com/6cMbHOC.png
 
