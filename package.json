@@ -1,6 +1,6 @@
 {
   "name": "le-table",
-  "version": "6.1.3",
+  "version": "6.1.4",
   "description": "Another NodeJS module for creating ASCII tables.",
   "main": "lib/index.js",
   "scripts": {
@@ -43,6 +43,7 @@
     "bin/",
     "app/",
     "lib/",
+    "build/",
     "dist/",
     "src/",
     "resources/",
