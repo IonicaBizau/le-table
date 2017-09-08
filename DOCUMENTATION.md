@@ -6,6 +6,7 @@ You can see below the API reference of this module.
 Creates a new instance of `LeTable`.
 
 #### Params
+
 - **Object** `options`: An object containing the table configuration:
   - `cell`: object containing
     - `hAlign` (default: `"center"`): One of the following values: `"left"`, `"center"` and `"right"`
@@ -22,6 +23,7 @@ Creates a new instance of `LeTable`.
 Adds a new row in table.
 
 #### Params
+
 - **Array** `columns`: Row data (as array)
 - **Object** `ops`: Options for cell content
 
