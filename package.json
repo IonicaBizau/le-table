@@ -1,6 +1,6 @@
 {
   "name": "le-table",
-  "version": "6.1.10",
+  "version": "6.1.11",
   "description": "Another NodeJS module for creating ASCII tables.",
   "main": "lib/index.js",
   "scripts": {
@@ -50,6 +50,8 @@
     "menu/",
     "cli.js",
     "index.js",
+    "index.d.ts",
+    "package-lock.json",
     "bloggify.js",
     "bloggify.json",
     "bloggify/"
