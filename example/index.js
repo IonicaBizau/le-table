@@ -8,7 +8,7 @@ let data = [
   , ["Cell 1.2", {
         text: "Multi\nline\n\u001b[34mcell\ncontent that\u001b[0m is\n left aligned."
       , data: {
-            hAlign: "left"
+            hAlign: "left",
         }
     }, "Cell 3.2"]
   , ["Cell 1.3", "Cell 2.3", "Cell 3.3"]
@@ -16,7 +16,12 @@ let data = [
 ];
 
 // Create table instance
-var myTable = new Table();
+// var myTable = new Table();
+var myTable = new Table({
+    cell: {
+        padding: { left: 4, right: 4} // adds 2 spaces to both sides of every cell
+    }
+});
 
 // Push data
 for (let i = 0; i < data.length; ++i) {
