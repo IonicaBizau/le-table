@@ -86,7 +86,7 @@ let data = [
   , ["Cell 1.2", {
         text: "Multi\nline\n\u001b[34mcell\ncontent that\u001b[0m is\n left aligned."
       , data: {
-            hAlign: "left"
+            hAlign: "left",
         }
     }, "Cell 3.2"]
   , ["Cell 1.3", "Cell 2.3", "Cell 3.3"]
@@ -94,7 +94,12 @@ let data = [
 ];
 
 // Create table instance
-var myTable = new Table();
+// var myTable = new Table();
+var myTable = new Table({
+    cell: {
+        padding: { left: 4, right: 4} // adds 2 spaces to both sides of every cell
+    }
+});
 
 // Push data
 for (let i = 0; i < data.length; ++i) {
@@ -110,23 +115,6 @@ console.log(myTable.stringify());
 
 
 
-
-
-
-
-
-
-
-
-## :question: Get Help
-
-There are few ways to get help:
-
-
-
- 1. Please [post questions on Stack Overflow](https://stackoverflow.com/questions/ask). You can open issues with questions, as long you add a link to your Stack Overflow question.
- 2. For bug reports and feature requests, open issues. :bug:
- 3. For direct and quick help, you can [use Codementor](https://www.codementor.io/johnnyb). :rocket:
 
 
 
@@ -179,6 +167,24 @@ Stringifies the table.
 
 
 
+## :question: Get Help
+
+There are few ways to get help:
+
+
+
+ 1. Please [post questions on Stack Overflow](https://stackoverflow.com/questions/ask). You can open issues with questions, as long you add a link to your Stack Overflow question.
+ 2. For bug reports and feature requests, open issues. :bug:
+ 3. For direct and quick help, you can [use Codementor](https://www.codementor.io/johnnyb). :rocket:
+
+
+
+
+
+
+
+
+
 
 
 
@@ -218,31 +224,6 @@ Thanks! :heart:
 
 
 
-
-
-
-## :dizzy: Where is this library used?
-If you are using this library in one of your projects, add it in this list. :sparkles:
-
- - `arisecoin-cli`
- - `ascii-github`
- - `bexbro`
- - `bexcli`
- - `bible`
- - `birthday`
- - `cli-github`
- - `dwn-client`
- - `git-issues`
- - `git-issues1`
- - `graphql-client-benchmarks`
- - `idea`
- - `mersul-microbuzelor`
- - `mersul-trenurilor`
- - `mnam-client`
- - `smartholdem-cli`
- - `tilda`
- - `tithe`
- - `torrent-info`
 
 
 
